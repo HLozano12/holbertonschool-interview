@@ -1,21 +1,29 @@
 # 0x00 Lockboxes
 
-## Write a method that determines if all the boxes can be opened
+Foobar is a Python library for dealing with word pluralization.
 
-### Project created By Carrie Ybay, Software Engineer at Holberton School
+## School project
 
--Allowed editors: vi, vim, emacs
+>created By Carrie Ybay, Software Engineer at Holberton School
 
--All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
+## Language coded
 
--All your files should end with a new line
+python
 
--The first line of all your files should be exactly #!/usr/bin/python3
+## Project Description
 
--A README.md file, at the root of the folder of the project, is mandatory
+Write a method that determines if all the boxes can be opened
 
--Your code should be documented
+### Returns
 
--Your code should use the PEP 8 style (version 1.7.x)
+* True if all boxes can be opened
 
--All your files must be executable
+* False if all else
+
+### Given Prototype
+
+def canUnlockAll(boxes)
+
+## Contributor
+
+### Hector Lozano
