@@ -10,20 +10,20 @@ def canUnlockAll(boxes):
 	"""
 
 	if not boxes:
-		return False
-	
-	j = []
-	total = len(boxes)
+    		return False
 
-	for keys in boxes:
-		if len(keys) == 0 and keys is not boxes[total-1]:
-			return False
-			for i in range(len(keys)):
-				if keys[i] in j:
-					return False
-				j.append(keys[i])
-				if keys[i] == 0:
-					return True
-				else:
-					return False
-						
+    # the first box is always open
+    	list = [0]
+    # keep track of the boxes that have been opened
+    	for box in range(len(boxes)):
+        # if the box is already opened, skip it
+        	for test_key in range(box, len(boxes)):
+            		if test_key in list:
+                		for key in boxes[test_key]:
+                    			if key not in list:
+                        			[list.append(key)]
+    # if all the boxes have been opened, return True
+    	for BoxKey in range(len(boxes)):
+        	if BoxKey not in list:
+            		return False
+    	return True
