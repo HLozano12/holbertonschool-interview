@@ -6,9 +6,8 @@ from typing import KeysView
 
 
 def canUnlockAll(boxes):
-	"""
-	Write a method that determines if all the boxes can be opened
-	"""
+	"""Write a method that determines if all the boxes can be opened"""
+	
 	KeysView =[0]
 	prevBox = 0
 
