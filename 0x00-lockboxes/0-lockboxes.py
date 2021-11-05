@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """Write a method that determines if all the boxes can be opened"""
 
+
 def canUnlockAll(boxes):
 	"""
-	Args:
-		boxes: list of lists with ints
-	Returns:
-		True if all boxes can be opened, False otherwise
+		Args:
+			boxes: list of lists with ints
+		Returns:
+			True if all boxes can be opened, False otherwise
 	"""
 
 	if type(boxes) is not list:
