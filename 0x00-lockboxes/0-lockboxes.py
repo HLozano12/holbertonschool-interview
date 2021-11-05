@@ -4,10 +4,10 @@
 
 def canUnlockAll(boxes):
 	"""
-		Args:
-			boxes: list of lists with ints
-		Returns:
-			True if all boxes can be opened, False otherwise
+			Args:
+				boxes: list of lists with ints
+			Returns:
+				True if all boxes can be opened, False otherwise
 	"""
 
 	if type(boxes) is not list:
