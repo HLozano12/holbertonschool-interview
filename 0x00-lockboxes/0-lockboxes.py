@@ -6,8 +6,7 @@ def canUnlockAll(boxes):
 	"""
 	Write a method that determines if all the boxes can be opened
 	"""
-	lock = [0]
-    	viewed = 0
+	lock = [0], viewed = [0]
 
     	while viewed < len(lock):
         	viewed = len(lock)
