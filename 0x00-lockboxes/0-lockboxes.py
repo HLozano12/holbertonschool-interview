@@ -4,25 +4,49 @@
 
 def canUnlockAll(boxes):
 	"""
-	Args:
-		boxes: list of lists with ints
-	Returns:
-		True if all boxes can be opened, False otherwise
+	Write a method that determines if all the boxes can be opened
 	"""
-
-	if type(boxes) is not list:
+	if not boxes:
 		return False
-	# if there are no boxes, return True
-	if len(boxes) == 0:
-		return False
-	for key in range(1, len(boxes) - 1):
-		viewed = False
-	# if the key is not in the list of keys, return False
-		for index in range(len(boxes)):
-			viewed = key in boxes[index] and key != index
-			# print(key, index, viewed)
-			if viewed:
-				break
-			if viewed is False:
-				return viewed
-	return True
+	if len(boxes) == 1:
+		return True
+	if len(boxes) == 2:
+		if boxes[0] == 0 or boxes[1] == 0:
+			return True
+		else:
+			return False
+	if len(boxes) == 3:
+		if boxes[0] == 0 or boxes[1] == 0 or boxes[2] == 0:
+			return True
+		else:
+			return False
+	if len(boxes) == 4:
+		if boxes[0] == 0 or boxes[1] == 0 or boxes[2] == 0 or boxes[3] == 0:
+			return True
+		else:
+			return False
+	if len(boxes) == 5:
+		if boxes[0] == 0 or boxes[1] == 0 or boxes[2] == 0 or boxes[3] == 0 or boxes[4] == 0:
+			return True
+		else:
+			return False
+	if len(boxes) == 6:
+		if boxes[0] == 0 or boxes[1] == 0 or boxes[2] == 0 or boxes[3] == 0 or boxes[4] == 0 or boxes[5] == 0:
+			return True
+		else:
+			return False
+	if len(boxes) == 7:
+		if boxes[0] == 0 or boxes[1] == 0 or boxes[2] == 0 or boxes[3] == 0 or boxes[4] == 0 or boxes[5] == 0 or boxes[6] == 0:
+			return True
+		else:
+			return False
+	if len(boxes) == 8:
+		if boxes[0] == 0 or boxes[1] == 0 or boxes[2] == 0 or boxes[3] == 0 or boxes[4] == 0 or boxes[5] == 0 or boxes[6] == 0 or boxes[7] == 0:
+			return True
+		else:
+			return False
+	if len(boxes) == 9:
+		if boxes[0] == 0 or boxes[1] == 0 or boxes[2] == 0 or boxes[3] == 0 or boxes[4] == 0 or boxes[5] == 0 or boxes[6] == 0 or boxes[7] == 0 or boxes[8] == 0:
+			return True
+		else:
+			return False
