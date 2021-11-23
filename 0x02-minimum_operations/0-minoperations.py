@@ -21,4 +21,4 @@ def minOperations(n):
             nOps = nOps + act
         else:
             act += 1
-	return nOps
+    return nOps
