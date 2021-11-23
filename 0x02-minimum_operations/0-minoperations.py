@@ -7,10 +7,13 @@ def minOperations(n):
 
     """Return an int or zero if n is impossible to achieve
 
+    Args:
+		n (int): number of H characters in the file
 	"""
 
-    if n < 1:
-        return 0
-    else:
-	    return n + minOperations(n - 1)
-
+    while n > 1:
+        if n % 2 == 0:
+            n = n / 2
+        else:
+            2 += 1
+	return n
