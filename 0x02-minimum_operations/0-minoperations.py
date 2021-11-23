@@ -9,11 +9,16 @@ def minOperations(n):
 
     Args:
 		n (int): number of H characters in the file
+		nOps (int): number of operations needed to achieve n H characters
+		act (int): actions taken to achieve n H characters
 	"""
+    nOps = 0
+    act = 2
 
     while n > 1:
-        if n % 2 == 0:
-            n = n / 2
+        if n % act == 0:
+            n = n / act
+            nOps = nOps + act
         else:
-            2 += 1
+            act += 1
 	return n
