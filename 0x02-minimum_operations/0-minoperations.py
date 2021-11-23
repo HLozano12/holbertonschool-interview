@@ -8,10 +8,10 @@ def minOperations(n):
     """Return an int or zero if n is impossible to achieve
 
     Args:
-		n (int): number of H characters in the file
-		nOps (int): number of operations needed to achieve n H characters
-		act (int): actions taken to achieve n H characters
-	"""
+        n (int): number of H characters in the file
+        nOps (int): number of operations needed to achieve n H characters
+        act (int): actions taken to achieve n H characters
+    """
     nOps = 0
     act = 2
 
