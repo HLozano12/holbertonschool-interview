@@ -75,7 +75,7 @@ int sandpiles_stable(int grid[3][3])
  * 
  * @grid: sandpile grid to print 
  */
-static void sandpiles_print(int grid[3][3])
+void sandpiles_print(int grid[3][3])
 {
 	int x, y;
 
