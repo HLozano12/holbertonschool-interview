@@ -49,11 +49,11 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 }
 
 /**
- * @sandpiles_stable - checks if a sandpile is stable
- * 
+ * sandpiles_stable - checks if a sandpile is stable
+ *
  * @grid: grid to check
- * 
- * Return: 0 if topple occured, 1 if not 
+ *
+ * Return: 0 if topple occured, 1 if not
  */
 int sandpiles_stable(int grid[3][3])
 {
@@ -62,7 +62,7 @@ int sandpiles_stable(int grid[3][3])
 	for (x = 0; x < 3; x++)
 	{
 		for (y = 0; y < 3; y++)
-		{ 
+		{
 			if (grid[x][y] > 3)
 				return (0);
 		}
@@ -72,8 +72,8 @@ int sandpiles_stable(int grid[3][3])
 
 /**
  * sandpiles_print - prints a 3x3 grid
- * 
- * @grid: sandpile grid to print 
+ *
+ * @grid: sandpile grid to print
  */
 void sandpiles_print(int grid[3][3])
 {
