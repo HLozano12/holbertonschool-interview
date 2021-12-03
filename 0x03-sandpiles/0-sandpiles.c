@@ -11,45 +11,40 @@
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int x, y;
-	
+	int temp_grid[3][3];
+
 	for (x = 0; x < 3; x++)
-	{
 		for (y = 0; y < 3; y++)
-		{
-			grid1[x][y] = grid1[x][y] + grid2[x][y];
-		}
-	}
-
-	while (1)
+			grid1[x][y] += grid2[x][y];
+	while (!sandpiles_stable(grid1))
 	{
-		if (grid1[0][0] > 3 || grid1[0][1] > 3 || grid1[0][2] > 3 ||
-			grid1[1][0] > 3 || grid1[1][1] > 3 || grid1[1][2] > 3 ||
-			grid1[2][0] > 3 || grid1[2][1] > 3 || grid1[2][2] > 3)
-		{
-			printf("=\n");
-			sandpiles_print(grid1);
+		print_grid(grid1);
 
-			for (x = 0; x < 3; x++)
+		for (x = 0; x < 3; x++)
+		for (y = 0; y < 3; y++)
+			temp_grid[i][j] = 0;
+
+		for (x = 0; x < 3; x++)
+			for (y = 0; y < 3; y++)
 			{
-				for (y = 0; y < 3; y++)
-				{
-					if (grid1[x][y] > 3)
-					{
-						grid1[x][y] = grid1[x][y] - 4;
-						if (x - 1 >= 0)
-							grid1[x - 1][y]++;
-						if (x + 1 < 3)
-							grid1[x + 1][y]++;
-						if (y - 1 >= 0)
-							grid1[x][y - 1]++;
-						if (y + 1 < 3)
-							grid1[x][y + 1]++;
-					}
-				}
+				if (y != 0 && grid1[x][y - 1] > 3)
+					temp_grid[x][y]++;
+				if (y != 2 && grid1[x][y + 1] > 3)
+					temp_grid[x][y]++;
+				if (x != 0 && grid1[x - 1][y] > 3)
+					temp_grid[x][y]++;
+				if (x != 2 && grid1[x + 1][y] > 3)
+					temp_grid[x][y]++;
 			}
-		}
-		else
-			break;
+
+		for (x = 0; x < 3; x++)
+			for (y = 0; y < 3; y++)
+			{
+				if (grid1[x][y] > 3)
+					grid1[x][y] -= 4;
+				grid1[x][y] += temp_grid[x][y];
+			}
+
 	}
 }
 
