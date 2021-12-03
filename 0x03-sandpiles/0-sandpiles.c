@@ -55,7 +55,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
  * 
  * Return: 0 if topple occured, 1 if not 
  */
-bool sandpiles_stable(int grid[3][3])
+int sandpiles_stable(int grid[3][3])
 {
 	int x, y;
 
@@ -75,7 +75,7 @@ bool sandpiles_stable(int grid[3][3])
  * 
  * @grid: sandpile grid to print 
  */
-void sandpiles_print(int grid[3][3])
+static void sandpiles_print(int grid[3][3])
 {
 	int x, y;
 
