@@ -52,10 +52,10 @@ int slide_line(int *line, size_t size, int direction)
 			break;
 		if (boolean == 0)
 		{
-			position1 = (direction == SLIDE_LEFT) ? position1 : position1 + 1;
-			position1 = (direction == SLIDE_RIGHT) ? position1 : position1 - 1;
-			position2 = (direction == SLIDE_LEFT) ? position2 : position2 + 1;
-			position2 = (direction == SLIDE_RIGHT) ? position2 : position2 - 1;
+			position1 = (direction == SLIDE_LEFT) ? position1 + 1 : position1;
+			position1 = (direction == SLIDE_RIGHT) ? position1 - 1 : position1;
+			position2 = (direction == SLIDE_LEFT) ? position2 + 1 : position2;
+			position2 = (direction == SLIDE_RIGHT) ? position2 - 1 : position2;
 		}
 	}
 	return (1);
