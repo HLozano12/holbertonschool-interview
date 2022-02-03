@@ -13,7 +13,7 @@ int slide_line(int *line, size_t size, int direction)
 {
 	size_t temp;
 	bool = 0;
-	i, j;
+	int i, j;
 	position1 = 0;
 	position2 = 1;
 
