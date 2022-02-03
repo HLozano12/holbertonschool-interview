@@ -11,39 +11,52 @@
 
 int slide_line(int *line, size_t size, int direction)
 {
-	int i, j, temp;
+	size_t temp;
+	boolean = 0;
+	i, j;
+	position1 = 0;
+	position2 = 1;
 
-	if (direction == SLIDE_LEFT)
-	{
-		for (i = 0; i < size - 1; i++)
-		{
-			for (j = 0; j < size - 1 - i; j++)
-			{
-				if (line[j] > line[j + 1])
-				{
-					temp = line[j];
-					line[j] = line[j + 1];
-					line[j + 1] = temp;
-				}
-			}
-		}
-	}
-	else if (direction == SLIDE_RIGHT)
-	{
-		for (i = 0; i < size - 1; i++)
-		{
-			for (j = size - 1; j > i; j--)
-			{
-				if (line[j] < line[j - 1])
-				{
-					temp = line[j];
-					line[j] = line[j - 1];
-					line[j - 1] = temp;
-				}
-			}
-		}
-	}
-	else
+	if (direction != SLIDE_LEFT && direction != SLIDE_RIGHT)
 		return (0);
+	position1 = (direction == SLIDE_LEFT) ? size - 1 : position1;
+	position2 = (direction == SLIDE_LEFT) ? size - 2 : position2;
+
+	for (i = 0; i < size; i++)
+	{ 	temp = positon2;
+		boolean = 0;
+		for (j = i + 1; j < size; j++)
+		{
+			if (line[position1] != 0 && line[positon2] == line[position1])
+			{
+				line[position1] = line[position1] * 2;
+				line[positon2] = 0;
+				boolean = 1;
+				break;
+			}
+
+			if (line[position1] == 0 && line[positon2] != 0)
+			{
+				line[position1] = line[positon2];
+				line[positon2] = 0;
+				boolean = 1;
+				i--;
+				break;
+			}
+
+			if (line[position2] != 0)
+				break;
+			direction == SLIDE_LEFT ? position2-- : position2++;
+		}
+		if (line[position1] == 0)
+			break;
+		if (boolean == 0)
+		{
+			position1 = (direction == SLIDE_LEFT) ? position1 : position1 + 1;
+			position1 = (direction == SLIDE_RIGHT) ? position1 : position1 - 1;
+			position2 = (direction == SLIDE_LEFT) ? position2 : position2 + 1;
+			position2 = (direction == SLIDE_RIGHT) ? position2 : position2 - 1;
+		}
+	}
 	return (1);
 }
