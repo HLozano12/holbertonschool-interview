@@ -12,10 +12,10 @@
 int slide_line(int *line, size_t size, int direction)
 {
 	size_t temp;
-	boolean bool = 0;
-	int i, j;
-	position1 = 0;
-	position2 = 1;
+	size_t boolean = 0;
+	size_t i, j;
+	size_t position1 = 0;
+	size_t position2 = 1;
 
 	if (direction != SLIDE_LEFT && direction != SLIDE_RIGHT)
 		return (0);
@@ -24,7 +24,7 @@ int slide_line(int *line, size_t size, int direction)
 
 	for (i = 0; i < size; i++)
 	{ 	temp = positon2;
-		bool = 0;
+		boolean = 0;
 		for (j = i + 1; j < size; j++)
 		{
 			if (line[position1] != 0 && line[positon2] == line[position1])
@@ -38,7 +38,7 @@ int slide_line(int *line, size_t size, int direction)
 			{
 				line[position1] = line[positon2];
 				line[positon2] = 0;
-				bool = 1;
+				boolean = 1;
 				i--;
 				break;
 			}
@@ -49,7 +49,7 @@ int slide_line(int *line, size_t size, int direction)
 		}
 		if (line[position1] == 0)
 			break;
-		if (bool == 0)
+		if (boolean == 0)
 		{
 			position1 = (direction == SLIDE_LEFT) ? position1 : position1 + 1;
 			position1 = (direction == SLIDE_RIGHT) ? position1 : position1 - 1;
