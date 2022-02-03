@@ -23,21 +23,21 @@ int slide_line(int *line, size_t size, int direction)
 	position2 = (direction == SLIDE_RIGHT) ? size - 2 : position2;
 
 	for (i = 0; i < size; i++)
-	{ 	temp = positon2;
+	{ 	temp = position2;
 		boolean = 0;
 		for (j = i + 1; j < size; j++)
 		{
-			if (line[position1] != 0 && line[positon2] == line[position1])
+			if (line[position1] != 0 && line[position2] == line[position1])
 			{
 				line[position1] = line[position1] * 2;
-				line[positon2] = 0;
+				line[position2] = 0;
 				break;
 			}
 
-			if (line[position1] == 0 && line[positon2] != 0)
+			if (line[position1] == 0 && line[position2] != 0)
 			{
-				line[position1] = line[positon2];
-				line[positon2] = 0;
+				line[position1] = line[position2];
+				line[position2] = 0;
 				boolean = 1;
 				i--;
 				break;
