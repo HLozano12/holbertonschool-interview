@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdbool.h>
 
 /* indicates direction of slide */
 #define SLIDE_LEFT 1
