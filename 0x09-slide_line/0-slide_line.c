@@ -47,46 +47,46 @@ void SlideToTheLeft(int *line, size_t size)
 
 void SlideToTheRight(int *line, size_t size)
 {
-	size_t x = size - 2;
-	size_t y = size - 1;
+	size_t i = size - 2;
+	size_t j = size - 1;
 
 	if (size > 1)
 	{
-		for (; x != 0; x--)
+		for (; i != 0; i--)
 		{
 
-			if (line[x] == 0)
+			if (line[i] == 0)
 			continue;
 
-			if (line[y] == line[x])
+			if (line[j] == line[i])
 			{
-				line[y] += line[x];
-				line[x] = 0;
-				y--;
+				line[j] += line[i];
+				line[i] = 0;
+				j--;
 			}
 
-			else if (line[y] == 0)
+			else if (line[j] == 0)
 			{
 
-				line[y] = line[x];
-				line[x] = 0;
+				line[j] = line[i];
+				line[i] = 0;
 			}
 
 			else
-			y--;
+			j--;
 		}
 
-		if (line[y] == line[x] || line[y] == 0)
+		if (line[j] == line[i] || line[j] == 0)
 		{
-			line[y] += line[x];
-			line[x] = 0;
+			line[j] += line[i];
+			line[i] = 0;
 		}
 		
-		if (line[y - 1] == 0 && line[x] != 0)
+		if (line[j - 1] == 0 && line[i] != 0)
 		{
 			y--;
-			line[x] = line[y];
-			line[x] = 0;
+			line[i] = line[j];
+			line[i] = 0;
 		}
 	}
 	return;
