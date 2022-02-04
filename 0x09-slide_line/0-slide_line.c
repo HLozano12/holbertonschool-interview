@@ -84,7 +84,7 @@ void SlideToTheRight(int *line, size_t size)
 		
 		if (line[j - 1] == 0 && line[i] != 0)
 		{
-			y--;
+			j--;
 			line[i] = line[j];
 			line[i] = 0;
 		}
