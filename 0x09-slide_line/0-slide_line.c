@@ -19,7 +19,7 @@ void SlideToTheLeft(int *line, size_t size)
 		
 		if (line[j] == line[i])
 		{
-			line[j] +- line[i];
+			line[j] += line[i];
 			line[i] = 0;
 			j++;
 		}
