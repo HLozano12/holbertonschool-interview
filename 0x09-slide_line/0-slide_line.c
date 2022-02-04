@@ -39,7 +39,7 @@ void SlideToTheLeft(int *line, size_t size)
 
 
 /**
- * @SlideToThe Right - slide the line to the right
+ * @SlideToTheRight - slide the line to the right
  * @line: the line to slide
  * @size: the size of the line(array)
  * Return: the number of elements moved
@@ -47,32 +47,49 @@ void SlideToTheLeft(int *line, size_t size)
 
 void SlideToTheRight(int *line, size_t size)
 {
-	size_t i = size - 2;
-	size_t j = size - 1;
+	size_t x = size - 2;
+	size_t y = size - 1;
 
-	for (; i >= 0; i--)
+	if (size > 1)
 	{
-		if (line[i] == 0)
-		continue;
+		for (; x != 0; x--)
+		{
+
+			if (line[x] == 0)
+			continue;
+
+			if (line[y] == line[x])
+			{
+				line[y] += line[x];
+				line[x] = 0;
+				y--;
+			}
+
+			else if (line[y] == 0)
+			{
+
+				line[y] = line[x];
+				line[x] = 0;
+			}
+
+			else
+			y--;
+		}
+
+		if (line[y] == line[x] || line[y] == 0)
+		{
+			line[y] += line[x];
+			line[x] = 0;
+		}
 		
-		if (line[j] == line[i])
+		if (line[y - 1] == 0 && line[x] != 0)
 		{
-			line[j] +- line[i];
-			line[i] = 0;
-			j--;
-		}
-
-		else if (line[j] == 0)
-		{
-			line[j] = line[i];
-			line[i] = 0;
-		}
-
-		else
-		{
-			j--;
+			y--;
+			line[x] = line[y];
+			line[x] = 0;
 		}
 	}
+	return;
 }
 
 /**
