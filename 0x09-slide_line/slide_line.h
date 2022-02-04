@@ -12,5 +12,7 @@
 
 /* Prototypes */
 int slide_line(int *line, size_t size, int direction);
+void SlideToTheLeft(int *line, size_t size);
+void SlideToTheRight(int *line, size_t size);
 
 #endif /* SLIDE_LINE_H */

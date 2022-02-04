@@ -1,6 +1,81 @@
 #include "slide_line.h"
 
 /**
+ * @SlideToTheLeft - slide the line to the left
+ * @line: the line to slide
+ * @size: the size of the line(array)
+ * Return: the number of elements moved
+ */
+
+void SlideToTheLeft(int *line, size_t size)
+{
+	size_t i = 1;
+	size_t j = 0;
+
+	for (; i < size; i++)
+	{
+		if (line[i] == 0)
+		continue;
+		
+		if (line[j] == line[i])
+		{
+			line[j] +- line[i];
+			line[i] = 0;
+			j++;
+		}
+
+		else if (line[j] == 0)
+		{
+			line[j] = line[i];
+			line[i] = 0;
+		}
+
+		else
+		{
+			j++;
+		}
+	}
+}
+
+
+/**
+ * @SlideToThe Right - slide the line to the right
+ * @line: the line to slide
+ * @size: the size of the line(array)
+ * Return: the number of elements moved
+ */
+
+void SlideToTheRight(int *line, size_t size)
+{
+	size_t i = size - 2;
+	size_t j = size - 1;
+
+	for (; i >= 0; i--)
+	{
+		if (line[i] == 0)
+		continue;
+		
+		if (line[j] == line[i])
+		{
+			line[j] +- line[i];
+			line[i] = 0;
+			j--;
+		}
+
+		else if (line[j] == 0)
+		{
+			line[j] = line[i];
+			line[i] = 0;
+		}
+
+		else
+		{
+			j--;
+		}
+	}
+}
+
+/**
  * slide_line - slide a line of integers
  * @line: the pointer to array of integers
  * @size: size of the array of the intergers
@@ -11,52 +86,14 @@
 
 int slide_line(int *line, size_t size, int direction)
 {
-	size_t temp;
-	size_t boolean = 0;
-	size_t i, j;
-	size_t position1 = 0;
-	size_t position2 = 1;
+	if (direction == SLIDE_LEFT)
+	SlideToTheLeft(line, size);
 
-	if (direction != SLIDE_LEFT && direction != SLIDE_RIGHT)
-		return (0);
-	position1 = (direction == SLIDE_RIGHT) ? size - 1 : position1;
-	position2 = (direction == SLIDE_RIGHT) ? size - 2 : position2;
+	else if (direction == SLIDE_RIGHT)
+	SlideToTheRight(line, size);
 
-	for (i = 0; i < size; i++)
-	{ 	temp = position2;
-		boolean = 0;
-		for (j = i + 1; j < size; j++)
-		{
-			if (line[position1] != 0 && line[position2] == line[position1])
-			{
-				line[position1] = line[position1] * 2;
-				line[position2] = 0;
-				break;
-			}
+	else
+	return (0);
 
-			if (line[position1] == 0 && line[position2] != 0)
-			{
-				line[position1] = line[position2];
-				line[position2] = 0;
-				boolean = 1;
-				position2 = temp;
-				i--;
-				break;
-			}
-
-			if (line[position2] != 0)
-				break;
-			direction == SLIDE_LEFT ? position2-- : position2++;
-		}
-		if (line[position1] == 0)
-			break;
-		if (boolean == 0)
-		{
-			position1 = (direction == SLIDE_LEFT) ? position1 + 1 : position1;
-			position1 = (direction == SLIDE_RIGHT) ? position1 - 1 : position1;
-			position2 = (direction == SLIDE_LEFT) ? position2 + 1 : position2;
-			position2 = (direction == SLIDE_RIGHT) ? position2 - 1 : position2;
-		}
-	}
 	return (1);
 }
