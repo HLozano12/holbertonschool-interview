@@ -1,5 +1,11 @@
 #include "menger.h"
 
+/**
+ * menger - create a 2d Menger Sponge
+ * @level: the level of the Sponge to draw
+ * Return: void
+ */
+
 void menger(int level)
 {
 	int i, j, k;
@@ -12,24 +18,18 @@ void menger(int level)
 	{
 		for (columns = 0; columns < size; columns++)
 		{
-			for (i = 0; i < level; i++)
+			k = 35; /* # */
+			i = rows;
+			j = columns;
+			while (i > 0 || j > 0)
 			{
-				for (j = 0; j < level; j++)
-				{
-					for (k = 0; k < level; k++)
-					{
-						if (i == j && j == k)
-						{
-							printf("#");
-						}
-						else
-						{
-							printf(" ");
-						}
-					}
-				}
+				if (i % 3 == 1 && j % 3 == 1)
+					k = 32; /* [space] */
+				i /= 3;
+				j /= 3;
 			}
+			putchar(k);
 		}
-		printf("\n");
+		putchar('\n');
 	}
 }
