@@ -18,10 +18,18 @@ def rain(walls):
 	if len(walls) == 0:
 		return 0
 
-	
-	while i < len(walls):
-		if walls[i] == 0:
-			walls.pop(i)
-			i -= 1
-		i += 1
-	return len(walls)
+	'''
+	Find the highest wall and the lowest wall
+	Calculate the water retained in the walls
+	Water can only be reatined in the lowest wall
+	'''
+	while h <= len(walls)-1:
+		left_dam = max(walls[:h + 1])
+		right_dam = max(walls[h:])
+		rain += max(min(left_dam, right_dam) - walls[h], 0)
+		h += 1
+
+	'''
+	Return the water retained in the walls
+	'''
+	return rain
