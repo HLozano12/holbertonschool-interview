@@ -17,5 +17,5 @@ for i in range(len(matrix)):
 # Reverse each row
 for i in range(len(matrix)):
     matrix[i].reverse()
-
+	
 return matrix
