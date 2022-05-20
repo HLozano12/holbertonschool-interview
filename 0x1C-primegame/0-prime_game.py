@@ -11,40 +11,35 @@ def isWinner(x, nums):
     Project gave us the names Maria and Ben.
     """
 
-    P1 = "Maria"
-    P2 = "Ben"
-    games = 0
+    P1 = 0
+    P2 = 0
 
-    if len(nums) == 0:
-        return None
-    if len(nums) == 1 and nums[0] == 1:
-        return None
-    for num in range(x):
-        rds = num if num < len(nums) - 1 else len(nums) - 1
-        if MultiSets(nums[num]) == 1:
-            games += 1
-        else:
-            games += 1
-    if games % 2 == 0:
-        return P2
-    elif games % 2 == 1:
-        return P1
+    if x is None or nums is None or x == 0 or nums == 0:
+            return None
+
+    for i in range(x):
+            P_Num = isPrime(nums[i])
+            if len(P_Num) % 2 == 0:
+                    P1 += 1
+            else:
+                P2 += 1
+    if P1 > P2:
+        return "Maria"
+    elif P2 > P1:
+        return "Ben"
     else:
         return None
 
 
-def MultiSets(y):
-    num_prime = 0
-    for i in range(y + 1):
-        if Check_Prime(i):
-            num_prime += 1
-    return num_prime % 2
-
-
 def Check_Prime(a):
-    if a == 1:
-        return False
-    for i in range(2, a):
-        if a % i == 0:
-            return False
-    return True
+    """""
+	Checking if the list is prime or not.
+	"""
+    P_Num = []
+    Sift = [True] * (a + 1)
+    for i in range(2, a + 1):
+        if Sift[i]:
+            P_Num.append(i)
+            for j in range(i * i, a + 1, i):
+                 Sift[j] = False
+    return P_Num
