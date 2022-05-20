@@ -7,8 +7,8 @@ Figure out how wins the prime number game.
 def isWinner(x, nums):
     """
     Ready set go.
-	Player 1 is P1 and Player 2 is P2
-	Project gave us the names Maria and Ben.
+    Player 1 is P1 and Player 2 is P2
+    Project gave us the names Maria and Ben.
     """
 
     P1 = "Maria"
@@ -32,12 +32,14 @@ def isWinner(x, nums):
     else:
         return None
 
+
 def MultiSets(y):
     num_prime = 0
     for i in range(y + 1):
         if Check_Prime(i):
             num_prime += 1
     return num_prime % 2
+
 
 def Check_Prime(a):
     if a == 1:
