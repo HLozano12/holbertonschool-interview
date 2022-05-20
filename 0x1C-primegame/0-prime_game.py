@@ -18,7 +18,7 @@ def isWinner(x, nums):
             return None
 
     for i in range(x):
-            P_Num = isPrime(nums[i])
+            P_Num = Check_Prime(nums[i])
             if len(P_Num) % 2 == 0:
                     P1 += 1
             else:
