@@ -34,12 +34,12 @@ def isWinner(x, nums):
 def Check_Prime(a):
     """""
 	Checking if the list is prime or not.
-	"""
+    """
     P_Num = []
     Sift = [True] * (a + 1)
     for i in range(2, a + 1):
         if Sift[i]:
             P_Num.append(i)
             for j in range(i * i, a + 1, i):
-                 Sift[j] = False
+                Sift[j] = False
     return P_Num
